@@ -5,7 +5,7 @@ project(rslidar_sdk)
 #=======================================
 # Custom Point Type (XYZI,XYZIRT, XYZIF, XYZIRTF)
 #=======================================
-set(POINT_TYPE XYZI)
+set(POINT_TYPE XYZIRT)
 
 option(ENABLE_TRANSFORM "Enable transform functions" OFF)
 if(${ENABLE_TRANSFORM})
@@ -93,7 +93,7 @@ message(=============================================================)
 #========================
 
 #ROS#
-find_package(roscpp 1.12 QUIET)
+#find_package(roscpp 1.12 QUIET)
 
 if(roscpp_FOUND)
 
@@ -140,6 +140,8 @@ if(rclcpp_FOUND)
 
   find_package(ament_cmake REQUIRED)
   find_package(sensor_msgs REQUIRED)
+  #set(rslidar_msg_DIR "/home/nvidia22/ros2_humble/src/rslidar_sdk/rslidar_msg/")
+  #list(APPEND CMAKE_MODULE_PATH("/home/nvidia22/ros2_humble/install/rslidar_msg/share/rslidar_msg/rslidar_msgConfig.cmake"))
   find_package(rslidar_msg REQUIRED)
   find_package(std_msgs REQUIRED)                      
 
